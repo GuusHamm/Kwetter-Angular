@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-sm-7">
+    <form *ngIf="kweet" action="#" method="post">
+      <div class="form-group">
+        <label for="message">What's happening?</label>
+        <textarea [(ngModel)]="kweet.message" type="text" name="message" class="form-control" id="message"
+                  rows="3" aria-describedby="kweetInlineHelp"></textarea>
+        <small id="kweetInlineHelp" class="text-muted">
+          {{kweet.message.length}} / 140
+        </small>
+      </div>
+      <button (click)="saveKweet(kweet)" type="submit" class="btn btn-primary">Post</button>
+    </form>
+    <div style="overflow-y: auto; overflow-x: hidden; overflow-wrap: break-word; height:700px">
+      <div *ngFor="let kweet of kweets" id="cards">
+        <app-kweet [kweet]="kweet"></app-kweet>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5" style="overflow-wrap: break-word">
+    <div class="card" *ngIf="account">
+      <div class="card-block">
+        <h2>{{account.username}}</h2>
+        <a class="lead">{{account.kweetSize}} kweets</a>
+        <p class="lead">Latest kweet:</p>
+        <app-alernate-kweet [kweet]="account.latestKweet"></app-alernate-kweet>
+      </div>
+    </div>
+    <div class="card" *ngIf="trends" style="overflow-wrap: break-word">
+      <div class="card-block">
+        <h2 class="card-text">Trending</h2>
+        <div *ngFor="let trend of trends">
+          <a (click)="setTrend(trend.name)">{{trend.name}}</a>
+          <span class="badge badge-pill badge-primary">{{trend.numberOfKweets}}</span>
+        </div>
+        <a (click)="getKweets()">
+          <i class="fa fa-eraser" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

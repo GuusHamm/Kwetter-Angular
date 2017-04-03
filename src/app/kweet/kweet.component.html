@@ -1,0 +1,33 @@
+<div *ngIf="kweet">
+  <div class="card" style="margin-top: 10px">
+    <div class="card-header">
+      <a [routerLink]="['/account']" [queryParams]="{username: kweet.account.username}">{{kweet.account.username}}</a>
+    </div>
+    <div class="card-block">
+      <p class="card-text">{{kweet.message}}</p>
+      <div class="row">
+        <div class="col-sm-3">
+          <button class="btn">
+            <i class="fa fa-heart fa-fw"></i>
+            <span class="badge">{{kweet.hearts}}</span>
+          </button>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn">
+            <i class="fa fa-mail-reply fa-fw"></i>
+            <span class="badge">0</span>
+          </button>
+        </div>
+        <div class="col-sm-6">
+          <p class="text-muted text-right">
+            <small>{{kweet.timestamp}}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer" *ngIf="kweet.trends && kweet.trends.length > 0">
+      <a class="card-link" *ngFor="let trend of kweet.trends" href="#">{{trend.name}}</a>
+    </div>
+  </div>
+</div>
+

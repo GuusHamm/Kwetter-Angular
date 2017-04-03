@@ -1,0 +1,7 @@
+<blockquote class="blockquote-reverse">
+  <p class="mb-0">{{kweet.message}}</p>
+  <footer class="blockquote-footer">
+    <a [routerLink]="['/account']" [queryParams]="{username: kweet.account.username}">{{kweet.account.username}} at
+      {{kweet.timestamp}}</a>
+  </footer>
+</blockquote>

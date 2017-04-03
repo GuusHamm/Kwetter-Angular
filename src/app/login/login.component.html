@@ -1,0 +1,11 @@
+<form class="form-inline">
+  <!--<div class="form-group">-->
+    <!--<label for="username">Username</label>-->
+    <input [(ngModel)]="username" class="form-control" id="username" name="username" type="text" placeholder="username">
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label for="password">password</label>-->
+    <input [(ngModel)]="password" class="form-control" id="password" name="password" type="password" placeholder="password">
+  <!--</div>-->
+  <button (click)="logIn(username,password)" class="btn btn-primary">Log in</button>
+</form>
