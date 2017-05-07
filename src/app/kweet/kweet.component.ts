@@ -13,7 +13,6 @@ export class KweetComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.kweet)
   }
 
 }

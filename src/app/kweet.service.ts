@@ -14,7 +14,6 @@ export class KweetService {
   }
 
   public create(kweet: Kweet): Observable<Kweet> {
-    console.log(kweet);
     return this.httpService.post(`${API_URL}/kweet`, kweet)
       .map(response => response.json());
   }

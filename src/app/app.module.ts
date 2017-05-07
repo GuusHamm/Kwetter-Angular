@@ -15,9 +15,10 @@ import {LoginComponent} from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
 import {AlertService} from './alert.service';
 import {AlertModule} from 'ng2-bootstrap';
-import {AuthService} from "./auth.service";
-import {TrendService} from "./trend.service";
-import { AlernateKweetComponent } from './alernate-kweet/alernate-kweet.component';
+import {AuthService} from './auth.service';
+import {TrendService} from './trend.service';
+import {AlernateKweetComponent} from './alernate-kweet/alernate-kweet.component';
+import {StompService} from 'ng2-stomp-service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AlernateKweetComponent } from './alernate-kweet/alernate-kweet.componen
     AccountService,
     AlertService,
     AuthService,
-    TrendService
+    TrendService,
+    StompService
   ],
   bootstrap: [AppComponent]
 })

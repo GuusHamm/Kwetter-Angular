@@ -14,7 +14,6 @@ export class HttpService {
   }
 
   public post(url, object: Object) {
-    console.log(url);
     return this.http.post(url, object, {
       headers: this.setHeaders()
     });
